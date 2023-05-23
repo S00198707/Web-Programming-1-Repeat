@@ -1,0 +1,12 @@
+<div class ="searchbar-container">
+    <form class="searchbar-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+     <span class="logo" routerLink="/">VGP</span>
+     <input
+     class="searchbar-input"
+     name="searchbar"
+     ngModel
+     placeholder="Search for over 300,000+ games"
+   />
+   <button class="searchbar-button">Search</button>
+  </form>
+  </div>
