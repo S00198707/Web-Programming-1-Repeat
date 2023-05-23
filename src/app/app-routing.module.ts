@@ -4,7 +4,8 @@ import { MainComponent } from './components/main/main.component';
 import { RegisteruserComponent } from './registeruser/registeruser.component';
 import { LoginuserComponent } from './loginuser/loginuser.component';
 import { GamedetailsComponent } from './components/gamedetails/gamedetails.component';
-
+import { FavoritesComponent } from './favorites/favorites.component';
+import { AdminComponent } from './admin-panel/admin-panel.component';
 const routes: Routes = [
 
   {
@@ -27,7 +28,10 @@ component: GamedetailsComponent,
 {
   path: '',
   component: RegisteruserComponent,
-  }
+  },
+  { path: 'favorites', component: FavoritesComponent },
+
+  { path: 'admin', component: AdminComponent }
 ];
 
 @NgModule({

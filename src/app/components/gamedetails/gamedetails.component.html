@@ -37,8 +37,11 @@ alt="background image"
   >Metacritic</a>
 
         </div>
+        <button (click)="addToFavorites($event)">
+  Add to Favorites
+</button>
+        </div>
+      </div>
+      <app-gamedetailstabs [game]="game" (addToFavorites)="addToFavorites($event)"></app-gamedetailstabs>
     </div>
-    <app-gamedetailstabs [game]="game"></app-gamedetailstabs>
-    </div>
-</div>
-</div>
+  </div>

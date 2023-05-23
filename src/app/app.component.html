@@ -1,3 +1,18 @@
-
-<app-searchbar></app-searchbar>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/main">The Gaming Hub</a>
+  <div class="container">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/favorites">
+          <i class="bi bi-heart"></i>
+          Your Favorites
+        </a>
+      </li>
+      <li *ngIf="isAdmin"><a routerLink="/admin">Admin</a></li>
+    </ul>
+    <div class="nav-item">
+      <button class="btn btn-outline-light" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
 <router-outlet></router-outlet>

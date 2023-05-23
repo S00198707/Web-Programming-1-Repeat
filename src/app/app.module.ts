@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,15 +20,28 @@ import { RegisteruserComponent } from './registeruser/registeruser.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptors';
 import { GamedetailsComponent } from './components/gamedetails/gamedetails.component';
 import { GamedetailstabsComponent } from './components/gamedetailstabs/gamedetailstabs.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { GameService } from './services/gameservice';
+import { FavoritesService } from './services/FavouritesService';
+import { Routes } from '@angular/router';
+import { AuthService } from './auth.service';
+import { AdminComponent } from './admin-panel/admin-panel.component';
+
+const appRoutes: Routes = [
+  { path: '', component: GamedetailsComponent },
+  { path: 'favorites', component: FavoritesComponent },
+];
 @NgModule({
   declarations: [
     AppComponent,
     SearchbarComponent,
     MainComponent,
+    AdminComponent,
     LoginuserComponent,
     RegisteruserComponent,
     GamedetailsComponent,
     GamedetailstabsComponent,
+    FavoritesComponent,
   ],
   
   imports: [
@@ -54,7 +67,9 @@ import { GamedetailstabsComponent } from './components/gamedetailstabs/gamedetai
       provide:HTTP_INTERCEPTORS,
       useClass: HttpHeadersInterceptor,
       multi: true,
-    }
+    },
+    GameService,
+    FavoritesService,
   ],
   bootstrap: [AppComponent]
 })

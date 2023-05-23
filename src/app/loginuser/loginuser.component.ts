@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-loginuser',
   templateUrl: './loginuser.component.html',
@@ -10,34 +11,32 @@ export class LoginuserComponent {
 
   email: string = '';
   password: string = '';
- 
-  isLogin: boolean = true;
-  errorMessage: string = "";
- 
-  constructor(private router: Router,private http: HttpClient) {}
- 
+
+  constructor(private router: Router, private http: HttpClient) {}
+
   login() {
     console.log(this.email);
     console.log(this.password);
- 
-    let bodyData = {
+
+    const bodyData = {
       email: this.email,
       password: this.password,
     };
- 
-        this.http.post("http://localhost:4800/user/login", bodyData).subscribe(  (resultData: any) => {
-        console.log(resultData);
- 
-        if (resultData.status)
-        {
-           this.router.navigateByUrl('/main');
+
+    this.http.post("http://localhost:4800/user/login", bodyData).subscribe((resultData: any) => {
+      console.log(resultData);
+
+      if (resultData.status) {
+        if (resultData.isAdmin) {
+          this.router.navigateByUrl('/admin');
+        } else {
+          this.router.navigateByUrl('/main');
         }
-        else
-         {
-          alert("Incorrect Email or Password");
-          console.log("Error logging");
-        }
-      });
-    }
- 
+      } else {
+        alert("Incorrect Email or Password");
+        console.log("Error logging");
+      }
+    });
+  }
 }
+

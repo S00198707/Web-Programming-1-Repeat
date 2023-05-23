@@ -1,0 +1,28 @@
+.favorite-games-container {
+    color: white;
+    
+    .favorite-games-heading {
+      margin-bottom: 1rem;
+    }
+    
+    .favorite-games-list {
+      list-style-type: none;
+      padding: 0;
+      
+      .favorite-game {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+        
+        .remove {
+          background-color: red;
+          color: white;
+          border: none;
+          padding: 0.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  

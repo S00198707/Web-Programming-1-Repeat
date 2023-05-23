@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/users": {
+      "name": "/users",
+      "lambdaFunction": "videogamesproject40978529",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

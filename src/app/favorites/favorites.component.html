@@ -1,0 +1,9 @@
+<div class="favorite-games-container">
+    <h2 class="favorite-games-heading">My Favorite Games</h2>
+    <ul class="favorite-games-list">
+      <li *ngFor="let game of favoriteGames" class="favorite-game">
+        {{ game.name }}
+        <button class="remove" (click)="removeFavorite(game)">Remove</button>
+      </li>
+    </ul>
+  </div>

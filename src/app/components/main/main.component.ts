@@ -13,6 +13,7 @@ export class MainComponent implements OnInit, OnDestroy {
   public games: Array<Game>;
   private routeSub: Subscription;
   private gameSub: Subscription;
+  public favorites: any[] = [];
 
   constructor(    
     private httpService: HttpService,
@@ -40,6 +41,13 @@ export class MainComponent implements OnInit, OnDestroy {
 
   getGameDetails(id: string): void {
     this.router.navigate(['gamedetails', id]);
+    this.httpService.getGameDetails(id).subscribe((Response: any) => {
+      this.games=Response.results;
+    })
+  }
+
+  addToFavorites(game: Game) {
+    this.favorites.push
   }
 
   ngOnDestroy(): void {
@@ -51,5 +59,5 @@ export class MainComponent implements OnInit, OnDestroy {
       this.routeSub.unsubscribe();
     }
   }
-
 }
+

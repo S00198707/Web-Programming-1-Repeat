@@ -21,6 +21,8 @@
         <div class="form-group">
             <label>password</label>
             <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="pass" placeholder="Enter password">
+
+            <p>Note: Password must be at least 8 characters with 1 uppercase and special character.</p>
           </div>
  
         <button type="submit" class="btn btn-primary mt-4" (click)="save()">Save</button>

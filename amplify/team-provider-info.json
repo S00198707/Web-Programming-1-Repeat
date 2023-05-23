@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-videogamesproject-dev-172201-authRole",
+      "UnauthRoleArn": "arn:aws:iam::642050257121:role/amplify-videogamesproject-dev-172201-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::642050257121:role/amplify-videogamesproject-dev-172201-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-videogamesproject-dev-172201-deployment",
+      "UnauthRoleName": "amplify-videogamesproject-dev-172201-unauthRole",
+      "StackName": "amplify-videogamesproject-dev-172201",
+      "StackId": "arn:aws:cloudformation:eu-west-1:642050257121:stack/amplify-videogamesproject-dev-172201/21d776b0-f0e1-11ed-af88-0633492de00f",
+      "AmplifyAppId": "d3dsu8hlwhxz1v"
+    },
+    "categories": {
+      "function": {
+        "videogamesproject40978529": {}
+      }
+    }
+  }
+}
